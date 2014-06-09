@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="screenshot-suite">
+
+    <test name="screenshot">
+        <classes>
+             <class name="es.s2o.automated.test.core.screenshots.ScreenShotsComparerTest" />
+        </classes>
+    </test>
+        
+</suite>

@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+ 
+<suite name="TestDefault">
+<!--   <listeners> -->
+<!--   	<listener class-name="es.s2o.automated.test.core.listeners.TapSuiteListener"></listener> -->
+<!--   </listeners> -->
+	<test name="sampleGroup1">
+		<classes>
+			<class name="es.s2o.automated.test.core.utilities.ExtDataProviderTest" />
+		</classes>
+	</test>
+ 
+ 
+</suite>

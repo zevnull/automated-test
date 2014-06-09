@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="test-all">
+ <!-- Apuntamos todas las suites por si queremos ejecutar todos los test juntos -->
+ <suite-files>
+  	<suite-file path="automated/test/excel-pro-suite.xml" />
+  	<suite-file path="automated/test/excel-suite.xml" />
+  	<suite-file path="automated/test/excel-userDemo-suite.xml" />
+  	<suite-file path="automated/test/screenshot-suite.xml" />
+  </suite-files>
+
+  <test name="test-unitarios">
+        <classes>
+            <class name="es.s2o.automated.test.core.conf.TestFindFile" />
+            <class name="es.s2o.automated.test.core.listeners.GroupsMethodInterceptorTest" />
+            <class name="es.s2o.automated.test.core.screenshot.ImageComparerTest"
+        </classes>
+    </test>
+</suite>

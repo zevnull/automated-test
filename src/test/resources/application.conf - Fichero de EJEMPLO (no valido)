@@ -1,0 +1,78 @@
+##################################################################################################################
+################### ESTE DOCUMENTO ES UN EJEMPLO CON TODAS LAS CONFIGURACIONES POSIBLES ##########################
+################### DE application.conf 												##########################
+################### ESTAS CONFIGURACIONES DE 'EJEMPLO' SON LAS QUE YA TIENE POR DEFECTO LA API  ##################
+################### ASí QUE SóLO ES NECESARIO INFORMAR EN NUESTRA APLICACIóN 			##########################
+################### LAS QUE SEAN DIFERENTES A LAS AQUí EXPUESTAS						##########################
+##################################################################################################################
+ OBS:: SE PODRáN AñADIR LAS PROPIEDADES QUE SEAN NECESARIAS PARA LA APLICACIóN
+	DEPUéS SERáN ACCESIBLES es.s2o.automated.test.core.pages.HomePageManager.getInstance().getConfig()
+	
+	EN es.s2o.automated.test.core.conf.ConstantsFunctionalTest
+##################################################################################################################
+webdriver_description="Parámetros de configuración del navegador"
+webdriver {
+	browser_description="El navegador que se lanzará (valores posibles de 'browser': FIREFOX, IEXPLORER, CHROME)"
+   	browser="FIREFOX"    
+   	exe {
+   		ie_desc="Si queremos ejecutar los test en paralelo, lo ms 'sano' sera utilizar 2 servidores de webdriver"   		
+	   	ie="C:/apps/selenium/IEDriverServer.exe"
+	   	ie2="C:/apps/selenium/IEDriverServer32.exe"
+	   	chrome="/home/s2o/workspace/laCaixa/ABSIS/automated-test/automated-test-prototype/eXtras/chromedriver_linux64_v2_9"
+	   	ff_="C:/apps/firefox/firefox.exe"
+	   	ff="/usr/lib/firefox/firefox"	   	
+   	}
+   	proxy{
+   		type_description="Tipo de conexión (valores posibles: DIRECT, MANUAL (httpProxy), PAC (proxyAutoconfigUrl), AUTODETECT, SYSTEM"
+   		type="DIRECT"
+   		httpProxy_description="Informar si type=MANUAL"
+   		httpProxy="10.113.10.13:8080"
+   		httpProxy_autoconfigUrl="Informar si type=PAC"
+   		autoconfigUrl="http://esproxy.everis.int/proxy.pac"
+   }
+   ie{
+   		loglevel_description="Specifies the level at which logging messages are output. Valid values are FATAL, ERROR, WARN, INFO, DEBUG, and TRACE. Defaults to FATAL"
+   		loglevel="FATAL"
+   		logfile="/logs/ie.log"
+   		silent_descrip="Suppresses diagnostic output when the IE driver is started."   	
+   		silent="true"
+   }
+   seconds_implicitly_wait=10 
+   recordAll=true   
+   shutdown_desc="Utilizado unicamente para configurar los servidores. IE no se quita y nos permite configuar los permisos y cookies"  
+   shutdown=true
+   necesitaCertificado=false
+}
+
+pages {
+	environment_description="Valores posibles de 'environment': URL (se obtine automticamente del inicio de la url definido en 'urlBase'), tst, pre..."
+	environment_description="Este valor se utiliza para buscar tablas de datos en los excel con el sufijo dado: '*pre')"
+	environment_description2="Tambin se utiliza para discriminar la ejecucin o no de test segn su entorno"
+	environment=URL
+	urlNueva="http://tfkwsd23.s2o.es/CA.OFI/Dem20_2/"
+ 	urlBase="https://pre01.tf7.s2o.es/"
+ 	urlBase2="https://pre01.tf7.s2o.es/"
+    login {
+    	class=es.s2o.automated.test.core.pages.COFLoginFlow
+    	required=true
+    	url="TF7LoginWeb/ofiLogin.tf?loginUrl=/CA.OFI/dem20Web/index.tf7&tf7_request_context=tf7_request_context&idioma=CAS"    
+    	postLoginIdValidation_desc="Cuando acabamos de hacer login, un id de la página por el que verificar que hemos hecho login correctamente"
+    	postLoginIdValidation="titol-aplicacio"	
+    }
+    logout="TF7Logout"
+    urlHome="CA.OFI/can20Web/resolutor.tf7?_tabGroupId=IDEGARTGTF7DEMOARQ20&tid=IDEGARTTF7_CAN20&sid=IDEGARSTTF7_CAN20_RESOLUTOR"
+    urlHome_validation="pestanyes-globals"
+} 
+
+user{
+	modoDemo_desc="Opciones de modoDemo:true/false"
+	modoDemo=true
+	username=80546
+	dc=36
+	pasword {
+		ims="2014kxe"
+		ags="tf7tf7"
+	}
+	oficina_contable=09761
+	ims="IMSEPPI1"
+}

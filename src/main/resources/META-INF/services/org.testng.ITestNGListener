@@ -1,0 +1,3 @@
+es.s2o.automated.test.core.listeners.WebDriverSuiteListener
+es.s2o.automated.test.core.listeners.WebDriverTestListener
+es.s2o.automated.test.core.listeners.GroupsMethodInterceptor
